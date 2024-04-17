@@ -17,9 +17,10 @@
 }
 
 body {
-  max-width: 100%;
+  max-width: 100vw;
   overflow-x: hidden;
   font-family: 'sc_prosper_sans';
+  max-height: 100vh;
 }
 
 @font-face {
@@ -90,6 +91,7 @@ body {
   align-items: center;
   align-content: center;
   background-color: #ffffff;
+  box-shadow: 0 2px 14px 0 rgba(220, 220, 220, 0.5);
 
   .continue-btn {
     align-content: center;
@@ -99,5 +101,8 @@ body {
     background-color: #2772C7;
     color: #ffffff;
     padding: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 21.28px;
   }
 }
