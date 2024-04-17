@@ -1,35 +1,80 @@
 import selfieImage from './selfie_intro.svg';
 import arrowLeft from './arrow_left.svg';
 import './App.css';
+import i18n from './react-i18next-config';
+import { useTranslation } from 'react-i18next';
+import { useLocation } from "react-router-dom";
 import ZolozRealIdCore from './zolozReadIdCore';
 
-const langPack = {
-  system_error_title: "System Error",
-  system_error_msg: 'Please try again later',
-  system_error_got_it: 'Got it',
-  network_error_title: 'No Internet Connection',
-  network_error_msg: 'Please check your internet connection and try again',
-  network_error_got_it: 'Got it',
-  fe_retry_max_title: '',
-  fe_retry_max_msg: 'Sorry, you have too many failed identification attempts. Please try again later.',
-  fe_retry_max_got_it: 'Got it'
-};
-
-var zolozRealIdCore = new ZolozRealIdCore({})
+function parseUrlParams(search) {
+  var params = {}
+  try {
+    var pairs = search.replace(/^\?/, '').split('&')
+    for (var i = 0; i < pairs.length; i++) {
+      var pair = pairs[i].split('=')
+      var key = decodeURIComponent(pair[0])
+      var value = decodeURIComponent(pair[1])
+      params[key] = value
+    }
+    return params
+  }
+  catch (e) {
+    return params
+  }
+}
 
 function App() {
+  const { t, i18n } = useTranslation()
+  const location = useLocation();
+
+  var zolozRealIdCore = new ZolozRealIdCore()
+  console.log(zolozRealIdCore)
+  var search = location.search
+  var params = parseUrlParams(search)
+  switch (params['locale']) {
+    case "zh-cn":
+    case "zh-CN":
+      i18n.changeLanguage("cn")
+      break
+    case "zh-hk":
+    case "zh-HK":
+      i18n.changeLanguage("hk")
+      break
+    default:
+      i18n.changeLanguage("en")
+  }
+
+  function backClick() {
+    zolozRealIdCore.end('back')
+  }
+
+  function continueClick() {
+    zolozRealIdCore.end('next')
+  }
+
   return (
     <div className="zoloz-page">
       <div className="zoloz-topbar">
-        <img src={arrowLeft} className="zoloz-icon-arrow-left" alt="turnBack" />
-        <header className="zoloz-topbar-title">Scan Face</header>
+        <img src={arrowLeft} className="zoloz-icon-arrow-left" alt="turnBack" onClick={backClick} />
+        <header className="zoloz-topbar-title">{t('title')}</header>
       </div>
-      <div>
-        <img src={selfieImage} className="App-logo" alt="logo" />
+      <div className="zoloz-content">
+        <img src={selfieImage} className="zoloz-logo" alt="logo" />
+        <div className='zoloz-content-tips'>
+          <header className='tips-title'>{t('tip-title')}</header>
+          <ul className='tips-list'>
+            <li>{t('tips.tip1')}</li>
+            <li>{t('tips.tip2')}</li>
+            <li>{t('tips.tip3')}</li>
+            <li>{t('tips.tip4')}</li>
+          </ul>
+        </div>
       </div>
-      <footer className="zoloz-bottomBar">
-        Continue
-      </footer>
+      <div className="zoloz-bottombar">
+        <p className="continue-btn" onClick={continueClick}>
+          {t('button')}
+        </p>
+      </div>
     </div>
   );
 }

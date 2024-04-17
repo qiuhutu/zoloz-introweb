@@ -1,0 +1,12 @@
+{
+    "title": "Scan Face",
+    "description": "Get ready to scan your face",
+    "tip-title": "SCAN FACE TIPS",
+    "tips": {
+        "tip1": "Position your face within the frame",
+        "tip2": "Make sure it’s clear and bright enough",
+        "tip3": "Wait a moment for automatic scanning",
+        "tip4": "Please don’t wear mask when scanning"
+    },
+    "button": "Continue"
+}

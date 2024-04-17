@@ -22,6 +22,9 @@ module.exports = babelJest.createTransformer({
       {
         runtime: hasJsxRuntime ? 'automatic' : 'classic',
       },
+      {
+        modules:'commonjs'
+      }
     ],
   ],
   babelrc: false,

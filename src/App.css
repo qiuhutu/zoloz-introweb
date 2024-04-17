@@ -2,10 +2,6 @@
   text-align: center;
 }
 
-.App-logo {
-  pointer-events: none;
-}
-
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -18,6 +14,17 @@
 
 .App-link {
   color: #61dafb;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-family: 'sc_prosper_sans';
+}
+
+@font-face {
+  font-family: 'sc_prosper_sans';
+  src: url(./sc_prosper_sans.ttf);
 }
 
 .zoloz-page {
@@ -34,8 +41,10 @@
   min-width: 100vw;
   align-content: flex-start;
   margin-top: 54px;
-  font-weight: 500;
+  font-weight: 600;
   align-items: center;
+  font-size: 16px;
+  line-height: 24px;
 
   .zoloz-icon-arrow-left {
     margin-left: 15px;
@@ -45,5 +54,50 @@
 
   .zoloz-topbar-title {
     display: inline-block;
+  }
+}
+
+.zoloz-content {
+  margin: 0 15px;
+
+  .zoloz-logo {
+    pointer-events: none;
+  }
+
+  .zoloz-content-tips {
+    margin: 20px 15px;
+
+    .tips-title {
+      font-weight: 500px;
+      font-size: 14px;
+      line-height: 18.62px;
+      letter-spacing: 0.6px;
+    }
+
+    .tips-list {
+      margin: 20px 0px 0px 5px;
+      padding: 0px 0px 0px 5px;
+      color: #828589;
+      size: 16px;
+      line-height: 21.28px;
+      font-weight: 400;
+    }
+  }
+}
+
+.zoloz-bottombar {
+  width: 100vw;
+  align-items: center;
+  align-content: center;
+  background-color: #ffffff;
+
+  .continue-btn {
+    align-content: center;
+    text-align: center;
+    margin: 25px 24px 32px 24px;
+    border-radius: 27px;
+    background-color: #2772C7;
+    color: #ffffff;
+    padding: 10px;
   }
 }
