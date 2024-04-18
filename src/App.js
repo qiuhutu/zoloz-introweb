@@ -3,7 +3,6 @@ import arrowLeft from './arrow_left.svg';
 import './App.css';
 import i18n from './react-i18next-config';
 import { useTranslation } from 'react-i18next';
-import { useLocation } from "react-router-dom";
 import ZolozRealIdCore from './zolozReadIdCore';
 
 function parseUrlParams(search) {
@@ -25,11 +24,9 @@ function parseUrlParams(search) {
 
 function App() {
   const { t, i18n } = useTranslation()
-  const location = useLocation();
-
   var zolozRealIdCore = new ZolozRealIdCore()
-  console.log(zolozRealIdCore)
-  var search = location.search
+
+  var search = window.location.search
   var params = parseUrlParams(search)
   switch (params['locale']) {
     case "zh-cn":
@@ -71,9 +68,9 @@ function App() {
         </div>
       </div>
       <div className="zoloz-bottombar">
-        <p className="continue-btn" onClick={continueClick}>
+        <div className="continue-btn" onClick={continueClick}>
           {t('button')}
-        </p>
+        </div>
       </div>
     </div>
   );
