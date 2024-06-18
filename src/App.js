@@ -28,7 +28,10 @@ function App() {
 
   var search = window.location.search
   var params = parseUrlParams(search)
-  switch (params['locale']) {
+  var locale = params['locale']
+  var type = params["type"]
+
+  switch (locale) {
     case "zh-cn":
     case "zh-CN":
       i18n.changeLanguage("cn")
@@ -51,10 +54,18 @@ function App() {
 
   return (
     <div className="zoloz-page">
-      <div className="zoloz-topbar">
-        <img src={arrowLeft} className="zoloz-icon-arrow-left" alt="turnBack" onClick={backClick} />
-        <header className="zoloz-topbar-title">{t('title')}</header>
-      </div>
+      {
+        type !== 'uob' ? (
+          <div className="zoloz-topbar">
+            <img src={arrowLeft} className="zoloz-icon-arrow-left" alt="turnBack" onClick={backClick} />
+            <header className="zoloz-topbar-title">{t('title')}</header>
+          </div>
+        ) :
+          (
+            <div></div>
+          )
+      }
+
       <div className="zoloz-content">
         <img src={selfieImage} className="zoloz-logo" alt="logo" />
         <div className='zoloz-content-tips'>
@@ -64,14 +75,27 @@ function App() {
             <li>{t('tips.tip2')}</li>
             <li>{t('tips.tip3')}</li>
             <li>{t('tips.tip4')}</li>
+            <li>{t('tips.tip5')}</li>
           </ul>
         </div>
       </div>
-      <div className="zoloz-bottombar">
-        <div className="continue-btn" onClick={continueClick}>
-          {t('button')}
-        </div>
-      </div>
+      {type === 'uob' ?
+        (
+          <div className='zoloz-bottombar-uob'>
+            <div className="continue-btn-uob" onClick={continueClick}>
+              {t('button')}
+            </div>
+          </div>
+        )
+        :
+        (
+          <div className="zoloz-bottombar">
+            <div className="continue-btn" onClick={continueClick}>
+              {t('button')}
+            </div>
+          </div>
+        )
+      }
     </div>
   );
 }

@@ -1,12 +1,13 @@
 {
     "title": "Scan Face",
     "description": "Get ready to scan your face",
-    "tip-title": "SCAN FACE TIPS",
+    "tip-title": "Next, let’s take a selfie",
     "tips": {
-        "tip1": "Position your face within the frame",
-        "tip2": "Make sure it’s clear and bright enough",
-        "tip3": "Wait a moment for automatic scanning",
-        "tip4": "Please don’t wear mask when scanning"
+        "tip1": "Take the selfie with plain background​",
+        "tip2": "Make sure no one is standing behind you​",
+        "tip3": "Don’t wear a mask when scanning",
+        "tip4": "Hold the camera at eye level and position your face within the frame ​",
+        "tip5": "Follow onscreen instructions to proceed"
     },
     "button": "Continue"
 }

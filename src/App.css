@@ -18,7 +18,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content:space-between;
-  background-color: #F7FBFF;
+  background-color: #f8f8f8;
 }
 
 .zoloz-topbar {
@@ -61,26 +61,28 @@ body {
 }
 
 .tips-title {
-  font-weight: 500px;
-  font-size: 14px;
-  line-height: 18.62px;
-  letter-spacing: 0.6px;
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 22.61px;
 }
 
 .tips-list {
   margin: 20px 0px 0px 5px;
   padding: 0px 0px 0px 5px;
-  color: #828589;
+  color: #333333;
   size: 16px;
   line-height: 21.28px;
   font-weight: 400;
+  font-size: 17sp;
+  line-height: 30.6px;
 }
 
 .zoloz-bottombar {
   width: 100vw;
   height: 100px;
+  display: flex;
   align-items: center;
-  align-content: center;
+  justify-content: center;
   background-color: #ffffff;
   box-shadow: 0 2px 14px 0 rgba(220, 220, 220, 0.5);
 }
@@ -88,12 +90,66 @@ body {
 .continue-btn {
   align-content: center;
   text-align: center;
-  margin: 25px 24px 32px 24px;
   border-radius: 27px;
+  margin-bottom: 8px;
+  width: 80vw;
   background-color: #2772C7;
   color: #ffffff;
   padding: 10px;
   font-weight: 500;
   font-size: 16px;
   line-height: 21.28px;
+}
+
+.zoloz-bottombar-uob {
+  display: flex;
+  align-items: center;
+  height: 188px;
+  width: 100vw;
+  background-color: #0C3A66;
+}
+
+.zoloz-bottombar-uob::before {
+  content: "";
+  position: absolute;
+  bottom: 128px;
+  display: block;
+  width: 100vw;
+  height: 61px;
+  background: #f8f8f8;
+  border-radius:  0 0 128px 0;
+}
+
+.zoloz-bottombar-uob::after {
+  content: "";
+  position: absolute;
+  bottom: 68px;
+  width: 60px;
+  height: 61px;
+  background: radial-gradient(120px at bottom right,transparent 49.5%,#f8f8f8 50.5%);
+}
+
+.continue-btn-uob {
+  display: flex;
+  margin-top: 32px;
+  height: 52px;
+  width: 100vw;
+  margin-left: 6.6vw;
+  margin-right: 18vw;
+  align-items: center;
+  background-color: #3BEB8D;
+  color: #0C3A66;
+  font-weight: 600;
+  font-size: 18sp;
+  border-radius: 26px 0 52px 26px;
+  padding-left: 23px;
+}
+
+.continue-btn-uob::before {
+  content: '';
+  height: 14px;
+  width: 19px;
+  background-color: #0C3A66;
+  margin-right: 20px;
+  clip-path: path('M6.71132 14C8.32741 13.9997 9.47727 13.4684 10.5989 12.7068L19 6.99991L10.5989 1.29335C9.46629 0.532639 8.27771 1.2084e-06 6.71132 1.07146e-06C3.00485 7.47427e-07 -9.23346e-07 3.13392 -1.26133e-06 7C-1.5993e-06 10.866 3.00485 14.0008 6.71132 14Z');
 }
