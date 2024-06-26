@@ -106,7 +106,9 @@ body {
 .zoloz-bottombar-uob {
   display: flex;
   align-items: center;
-  height: 188px;
+  position: fixed;
+  bottom: 0;
+  height: 128px;
   width: 100vw;
   background-color: #0C3A66;
 }
@@ -114,12 +116,11 @@ body {
 .zoloz-bottombar-uob::before {
   content: "";
   position: absolute;
+  right: 0;
   bottom: 128px;
-  display: block;
-  width: 100vw;
-  height: 61px;
-  background: #f8f8f8;
-  border-radius:  0 0 128px 0;
+  width: 61px;
+  height: 60px;
+  background: radial-gradient(120px at top left,transparent 49.5%,#0C3A66 50.5%);
 }
 
 .zoloz-bottombar-uob::after {
@@ -133,7 +134,7 @@ body {
 
 .continue-btn-uob {
   display: flex;
-  margin-top: 32px;
+  margin-top: -22px;
   height: 52px;
   width: 100vw;
   margin-left: 6.6vw;
