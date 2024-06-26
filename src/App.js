@@ -58,7 +58,7 @@ function App() {
         type !== 'uob' ? (
           <div className="zoloz-topbar">
             <img src={arrowLeft} className="zoloz-icon-arrow-left" alt="turnBack" onClick={backClick} />
-            <header className="zoloz-topbar-title">{t('title')}</header>
+            {/* <header className="zoloz-topbar-title">{t('title')}</header> */}
           </div>
         ) :
           (
@@ -79,6 +79,7 @@ function App() {
           </ul>
         </div>
       </div>
+      <div></div>
       {type === 'uob' ?
         (
           <div className='zoloz-bottombar-uob'>
