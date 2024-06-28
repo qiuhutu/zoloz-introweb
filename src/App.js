@@ -69,7 +69,7 @@ function App() {
       <div className="zoloz-content">
         <img src={selfieImage} className="zoloz-logo" alt="logo" />
         <div className='zoloz-content-tips'>
-          <header className='tips-title'>{t('tip-title')}</header>
+          <header className='tips-title'><strong>{t('tip-title')}</strong></header>
           <ul className='tips-list'>
             <li>{t('tips.tip1')}</li>
             <li>{t('tips.tip2')}</li>

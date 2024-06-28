@@ -45,7 +45,7 @@ body {
 }
 
 .zoloz-content {
-  margin: 0 15px 100px 15px;
+  margin: 0 15px 140px 15px;
   justify-content: center;
   display: flex;
   flex-direction: column;
@@ -61,7 +61,6 @@ body {
 }
 
 .tips-title {
-  font-weight: 500;
   font-size: 17px;
   line-height: 22.61px;
 }
